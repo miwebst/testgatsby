@@ -1,0 +1,322 @@
+@import 'base/poole';
+@import 'base/hyde';
+
+h1,
+h2,
+h3,
+h4 {
+  a.anchor {
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+li {
+  img {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+  }
+}
+
+code,
+pre {
+  font-family: Consolas, Menlo, Monaco, 'Courier New', monospace;
+}
+
+figure {
+  margin: 0 0 1rem;
+
+  img {
+    margin: 0;
+  }
+}
+
+figcaption {
+  font-size: 80%;
+  font-style: italic;
+  margin: 5px 0 0 5px;
+  color: #999;
+
+  svg {
+    transform: skewX(-15deg);
+    margin-right: 4px;
+  }
+}
+
+abbr {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+abbr[title] {
+  border-bottom: inherit;
+}
+
+.sidebar-about {
+  .sidebar-logo {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+  }
+
+  h1 {
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.025rem;
+  }
+}
+
+.sidebar-nav-item {
+  text-transform: lowercase;
+}
+
+.sidebar-social {
+  margin-bottom: 1rem;
+}
+
+.sidebar-social-item {
+  font-size: 16px;
+  text-align: center;
+  line-height: 36px;
+  width: 36px;
+  height: 36px;
+  margin-right: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+
+  svg {
+    margin: 0;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: #fff;
+    text-decoration: none;
+  }
+}
+
+.sidebar-logos,
+.sidebar-facebook {
+  display: none;
+}
+
+.post-thumbnail {
+  margin-top: 1.5rem;
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  color: #9a9a9a;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+
+  .posted-on,
+  .categories,
+  .tags,
+  .comments,
+  .edit {
+    margin-right: 10px;
+
+    svg {
+      margin-right: 4px;
+    }
+  }
+}
+
+.sidebar-logos {
+  .sidebar-logos-logo {
+    max-width: 200px;
+    max-height: 100px;
+  }
+}
+
+.post-author,
+.post-social,
+.post-comments,
+.post-navigation {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.post-author {
+  overflow: hidden;
+
+  .author-thumbnail {
+    width: 80px;
+    border-radius: 50%;
+    float: left;
+  }
+
+  .author-biography {
+    margin-left: 100px;
+
+    h2 {
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.post-social-item {
+  font-size: 0.6rem;
+  border-radius: 50px;
+  padding: 4px 12px;
+  display: inline-block;
+  margin-right: 5px;
+  color: #fff;
+
+  span {
+    margin-left: 5px;
+    display: inline-block;
+  }
+
+  @mixin withColors($regularColor, $highlightColor) {
+    background-color: $regularColor;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $highlightColor;
+    }
+  }
+
+  &[href*='twitter.com'] {
+    @include withColors(#55acee, #2795e9);
+  }
+
+  &[href*='facebook.com'] {
+    @include withColors(#3b5998, #2d4373);
+  }
+
+  &[href*='linkedin.com'] {
+    @include withColors(#0077b5, #046293);
+  }
+
+  &[href*='whatsapp:'] {
+    @include withColors(#1da851, #25d366);
+  }
+
+  &[href*='mailto:'] {
+    @include withColors(#5e5e5e, #777);
+  }
+}
+
+.post-entry {
+  margin-top: 0;
+
+  small {
+    font-size: 75%;
+    color: #999;
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    color: #268bd2;
+    text-decoration: none;
+
+    small {
+      color: inherit;
+    }
+  }
+}
+
+.content-footer {
+  font-size: 0.6rem;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+
+  p {
+    margin: 0;
+  }
+}
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  word-wrap: normal !important;
+}
+
+@media (min-width: 38em) {
+  .sidebar-about {
+    .sidebar-logo {
+      width: 160px;
+    }
+  }
+}
+
+@media (min-width: 48em) {
+  h1,
+  h2,
+  h3,
+  h4 {
+    %anchor-visible {
+      opacity: 1;
+      text-decoration: none;
+    }
+
+    a.anchor {
+      margin-left: 8px;
+
+      svg {
+        font-size: 0.8rem;
+        vertical-align: middle;
+      }
+
+      &:focus {
+        @extend %anchor-visible;
+      }
+    }
+
+    &:hover a.anchor {
+      @extend %anchor-visible;
+    }
+  }
+
+  .sidebar {
+    width: 20rem;
+  }
+
+  .sidebar-about {
+    .sidebar-logo {
+      width: 100px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .sidebar-logos,
+  .sidebar-facebook {
+    display: block;
+  }
+
+  .content {
+    margin-left: 22rem;
+  }
+}
+
+@media (min-width: 58em) {
+  .sidebar-about {
+    .sidebar-logo {
+      width: 160px;
+    }
+  }
+
+  .content {
+    margin-left: 24rem;
+  }
+}

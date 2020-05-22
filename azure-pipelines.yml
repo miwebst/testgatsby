@@ -1,0 +1,11 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - script: |
+      yarn install
+    displayName: 'yarn install'
+
+  - script: |
+      yarn build
+    displayName: 'yarn build'
