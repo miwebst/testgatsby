@@ -15,7 +15,7 @@ tags:
   - MSBuild
 ---
 
-Let me just start by saying that Build 2020 was awesome!! Like really awesome!!
+Let me just start by saying that Build 2020 was awesome!! ack
 
 There was a lot of great content going around for everyone, but as I was watching the ["From code to scale! Build a static web app in minutes"](https://mybuild.microsoft.com/sessions/898230c4-1350-4fc6-acba-6baf1a58d76a) session showing how easy it is to use [**Azure Static Web Apps**](https://azure.microsoft.com/en-au/services/app-service/static/), I couldn't help but to try that for my own with this website!
 
